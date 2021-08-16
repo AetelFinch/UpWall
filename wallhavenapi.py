@@ -75,19 +75,6 @@ class Color():
     gun_powder = "424153"
 
 
-class Type():
-    jpeg = "jpeg"
-    jpg = "jpg" # the same as jpeg
-    png = "png"
-
-
-class Seed(object):
-    @staticmethod
-    def generate():
-        # [a-zA-Z0-9]{6}
-        return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(6))
-
-
 class RequestsLimitError(Exception):
     def __init__(self):
         super().__init__("You have exceeded requests limit. Please try later.")
@@ -100,8 +87,7 @@ class ApiKeyError(Exception):
 
 class UnhandledException(Exception):
     def __init__(self):
-        super().__init__("Somthing went wrong. Please submit this issue to "
-                         "https://github.com/Goblenus/WallhavenApi/issues.")
+        super().__init__("Somthing went wrong")
 
 
 class NoWallpaperError(Exception):
